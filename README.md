@@ -35,5 +35,6 @@ npm run build
 ```
 
 ## Tech-stack
+* [DEMO-LINK](https://andreymalyshev147.github.io/vue-weather-app/)
 * Tech stack: HTML5, CSS3, SASS(SCSS), BEM, JS, VUE 3, VUEX
 * Fully responsive and adaptive layout (mobiles, tablets, laptops, high screens)
