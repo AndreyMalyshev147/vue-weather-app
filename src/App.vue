@@ -1,30 +1,72 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div :class="`main-container ${getTimeOfDay}`">
+    <header class="header">
+      <Header />
+    </header>
+    <main>
+      <CurrentLocation />
+      <CityWeatherList />
+    </main>
   </div>
   <router-view/>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import { mapActions, mapGetters } from 'vuex';
+import Header from '@/components/Header';
+import CurrentLocation from '@/components/CurrentLocation';
+import CityWeatherList from '@/components/CityWeatherList';
 
-#nav {
-  padding: 30px;
+console.log()
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+export default {
+  components: {
+    Header,
+    CurrentLocation,
+    CityWeatherList,
+  },
 
-    &.router-link-exact-active {
-      color: #42b983;
+  data() {
+    return {
+      timeOfDay: true
     }
+  },
+
+  beforeCreate() {
+    this.$store.commit('initialiseStore');
+  },
+
+  computed: {
+    ...mapGetters(['getTimeOfDay'])
+  },
+
+  methods: {
+    ...mapActions(['fetchWeatherInCurrentLocation']),
+  },
+
+  created() {
+    this.fetchWeatherInCurrentLocation();
+  }
+}
+</script>
+
+<style lang="scss">
+@import "@/assets/style/main.scss";
+
+.main-container {
+  height: 100vh;
+
+  &.Day, &.Night {
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &.Day {
+    background-image: url("~@/assets/img/background-day.png");
+  }
+
+  &.Night {
+    background-image: url("~@/assets/img/background-night.png");
   }
 }
 </style>

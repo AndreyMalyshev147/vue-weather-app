@@ -1,12 +1,11 @@
-import { createStore } from 'vuex'
+import { createStore } from 'vuex';
+
+import CurrentLocWeather from '@/store/modules/CurrentLocWeather';
+import CitiesWeather from '@/store/modules/CitiesWeather';
 
 export default createStore({
-  state: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
   modules: {
+    CurrentLocWeather,
+    CitiesWeather
   }
 })

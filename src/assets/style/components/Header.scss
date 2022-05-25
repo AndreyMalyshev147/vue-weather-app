@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 15px 25px;
+  background: transparent;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    & input {
+      width: 400px;
+      height: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid rgba($black, 0.2);
+      border-radius: 25px;
+    }
+
+    & button {
+      height: 100%;
+      padding: 10px;
+      border: 1px solid rgba($black, 0.2);
+      border-radius: 25px;
+      background: $white;
+    }
+  }
+}

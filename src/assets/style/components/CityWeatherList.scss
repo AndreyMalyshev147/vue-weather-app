@@ -1,0 +1,68 @@
+.weather {
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  &__list-item {
+    position: relative;
+    width: 180px;
+    padding: 10px;
+    border: 1px solid rgba($black, 0.2);
+    border-radius: 15px;
+    background: rgba($white, 0.3);
+  }
+}
+
+.card {
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__delete {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+
+    & button {
+      background: transparent;
+    }
+  }
+
+  &__city {
+    margin-bottom: 20px;
+
+    & span {
+      font-weight: 700;
+      font-size: 18px;
+      text-align: center;
+      color: $white;
+    }
+  }
+
+  &__country {
+    margin-bottom: 20px;
+
+    & span {
+      font-weight: 700;
+      font-size: 18px;
+      text-align: center;
+      color: $white;
+    }
+  }
+
+  &__temperature {
+
+    & span {
+      font-weight: 500;
+      font-size: 24px;
+      color: $white;
+    }
+  }
+}

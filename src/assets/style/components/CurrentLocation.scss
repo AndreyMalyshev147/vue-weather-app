@@ -1,0 +1,137 @@
+.big-card {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+
+  &__wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    height: max-content;
+    padding: 10px;
+    border-radius: 15px;
+    background: rgba($white, 0.3);
+  }
+
+  &__weather-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    &--Clouds,
+    &--Thunderstorm,
+    &--Rain,
+    &--Clear,
+    &--Snow {
+      width: 50px;
+      height: 50px;
+      background-size: contain;
+    }
+
+    &--Clouds {
+      background-image: url('~@/assets/img/clouds.svg');
+    }
+
+    &--Thunderstorm {
+      background-image: url('~@/assets/img/thunderstorm.svg');
+    }
+
+    &--Rain {
+      background-image: url('~@/assets/img/rain.svg');
+    }
+
+    &--Clear {
+      background-image: url('~@/assets/img/sunny.svg');
+    }
+
+    &--Snow {
+      background-image: url('~@/assets/img/snow.svg');
+    }
+  }
+
+  &__city {
+    margin-bottom: 50px;
+
+    & span {
+      font-weight: 700;
+      font-size: 24px;
+      text-align: center;
+      color: $white;
+    }
+  }
+
+  &__country {
+    margin-bottom: 50px;
+
+    & span {
+      font-weight: 700;
+      font-size: 24px;
+      text-align: center;
+      color: $white;
+    }
+  }
+
+  &__temperature {
+    margin-bottom: 10px;
+
+    & span {
+      font-weight: 500;
+      font-size: 48px;
+      color: $white;
+    }
+
+    &--min-max {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 25px;
+
+      & span {
+        font-weight: 700;
+        font-size: 16px;
+        color: $white;
+      }
+    }
+
+    &--other {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin: 0;
+    }
+
+    &--feels-like, &--humidity {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: max-content;
+
+      & span {
+
+        &:first-child {
+          font-size: 36px;
+          color: $white;
+        }
+
+        &:last-child {
+          font-weight: 400;
+          font-size: 16px;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  &__description {
+    margin-bottom: 10px;
+
+    & span {
+      font-size: 16px;
+      text-align: center;
+      color: $white;
+    }
+  }
+}
