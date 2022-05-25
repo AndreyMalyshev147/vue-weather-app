@@ -38,7 +38,7 @@ const actions = {
       commit('checkDay', data);
       commit('checkMainWeather', data);
     } catch (e) {
-      console.log(e);
+      console.log('ERROR', e);
     }
   }
 };
@@ -53,7 +53,7 @@ const mutations = {
   },
 
   updateWeather(state, weather) {
-    state.weather = weather
+    state.weather = weather;
   },
 
   checkDay(state, timeOfday) {

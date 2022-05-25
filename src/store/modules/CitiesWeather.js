@@ -12,11 +12,15 @@ const getters = {
 
 const actions = {
   async getCitiesWeather({ commit }, city) {
-    const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?units=metric&q=${city}&appid=8ad1811ee44e3fe3020912cc0d2ef4e0`);
+    try {
+      const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?units=metric&q=${city}&appid=8ad1811ee44e3fe3020912cc0d2ef4e0`);
 
-    const data = res.data;
+      const data = res.data;
 
-    commit('addCitiesWeather', data);
+      commit('addCitiesWeather', data);
+    } catch (e) {
+      console.log('ERROR', e);
+    }
   }
 };
 
