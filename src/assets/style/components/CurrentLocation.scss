@@ -13,6 +13,11 @@
     padding: 10px;
     border-radius: 15px;
     background: rgba($white, 0.3);
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(105%);
+    }
   }
 
   &__weather-icon {

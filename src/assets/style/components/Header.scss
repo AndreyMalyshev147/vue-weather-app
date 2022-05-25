@@ -11,25 +11,31 @@
   }
 
   &__search {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 20px;
 
     & input {
-      width: 400px;
+      width: 500px;
       height: 100%;
-      margin-bottom: 10px;
-      padding: 10px;
-      border: 1px solid rgba($black, 0.2);
+      margin-bottom: 15px;
+      padding: 10px 15px;
+      border-color: transparent;
       border-radius: 25px;
+
+      &::placeholder {
+        font-style: italic;
+      }
     }
 
     & button {
       height: 100%;
-      padding: 10px;
-      border: 1px solid rgba($black, 0.2);
+      padding: 10px 40px;
+      border-color: transparent;
       border-radius: 25px;
       background: $white;
+      font-weight: 700;
     }
   }
 }

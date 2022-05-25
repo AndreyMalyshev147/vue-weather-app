@@ -1,5 +1,11 @@
 .weather {
 
+  &__list-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   &__list {
     display: flex;
     justify-content: center;
@@ -11,9 +17,46 @@
     position: relative;
     width: 180px;
     padding: 10px;
-    border: 1px solid rgba($black, 0.2);
     border-radius: 15px;
     background: rgba($white, 0.3);
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(105%);
+    }
+  }
+
+  &__btn-box {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+
+    & button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      border: 2px solid $white;
+      border-radius: 50%;
+      background: transparent;
+
+      &:disabled {
+        border: 2px solid rgba($white, 0.3);
+        cursor: not-allowed;
+
+        & svg {
+
+          & g {
+            stroke: rgba($white, 0.3);
+          }
+        }
+      }
+
+      &:first-child {
+        transform: rotate(180deg);
+      }
+    }
   }
 }
 
@@ -58,11 +101,45 @@
   }
 
   &__temperature {
+    margin-bottom: 20px;
 
     & span {
       font-weight: 500;
       font-size: 24px;
       color: $white;
+    }
+  }
+
+  &__weather {
+
+    &--Clouds,
+    &--Thunderstorm,
+    &--Rain,
+    &--Clear,
+    &--Snow {
+      width: 50px;
+      height: 50px;
+      background-size: contain;
+    }
+
+    &--Clouds {
+      background-image: url('~@/assets/img/clouds.svg');
+    }
+
+    &--Thunderstorm {
+      background-image: url('~@/assets/img/thunderstorm.svg');
+    }
+
+    &--Rain {
+      background-image: url('~@/assets/img/rain.svg');
+    }
+
+    &--Clear {
+      background-image: url('~@/assets/img/sunny.svg');
+    }
+
+    &--Snow {
+      background-image: url('~@/assets/img/snow.svg');
     }
   }
 }
