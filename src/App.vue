@@ -54,7 +54,13 @@ export default {
 @import "@/assets/style/main.scss";
 
 .main-container {
-  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 15px;
+  overflow-y: scroll;
 
   &.Day, &.Night {
     background-repeat: no-repeat;
@@ -67,6 +73,12 @@ export default {
 
   &.Night {
     background-image: url("~@/assets/img/background-night.png");
+  }
+}
+
+@include mobile {
+  .main-container {
+    height: 100%;
   }
 }
 </style>

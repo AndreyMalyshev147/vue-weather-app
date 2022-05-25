@@ -32,7 +32,7 @@
         </div>
       </li>
     </ul>
-    <div class="weather__btn-box">
+    <div v-if="citiesList.length > 5" class="weather__btn-box">
       <button
         class="weather__btn weather__btn--prev"
         :disabled="currentPage === 1"

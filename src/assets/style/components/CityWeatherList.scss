@@ -72,13 +72,20 @@
     position: absolute;
     top: 2px;
     right: 2px;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: rotate(360deg);
+    }
 
     & button {
       background: transparent;
+
     }
   }
 
   &__city {
+    width: 100px;
     margin-bottom: 20px;
 
     & span {
@@ -140,6 +147,29 @@
 
     &--Snow {
       background-image: url('~@/assets/img/snow.svg');
+    }
+  }
+}
+
+@include tablet {
+  .weather {
+
+    &__list-item {
+      width: 140px;
+    }
+  }
+}
+
+@include mobile {
+  .weather {
+
+    &__list {
+      flex-direction: column;
+      width: 150px;
+    }
+
+    &__list-item {
+      width: 100%;
     }
   }
 }
