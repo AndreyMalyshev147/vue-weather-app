@@ -1,10 +1,14 @@
 <template>
   <div class="weather__list-wrap">
     <ul class="weather__list">
-      <li class="weather__list-item" v-for="city in filteredList" :key="city.id">
+      <li
+        class="weather__list-item"
+        v-for="city in filteredList"
+        :key="city.id"
+      >
         <div :class="`card__wrap card__wrap--${city.weather[0].main}`">
           <div class="card__delete">
-          <button @click.stop="removeCities(city)">
+            <button @click.stop="removeCities(city)">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -32,7 +36,10 @@
         </div>
       </li>
     </ul>
-    <div v-if="citiesList.length > 5" class="weather__btn-box">
+    <div
+      v-if="citiesList.length > 5"
+      class="weather__btn-box"
+    >
       <button
         class="weather__btn weather__btn--prev"
         :disabled="currentPage === 1"

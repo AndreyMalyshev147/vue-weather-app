@@ -1,5 +1,5 @@
 <template>
-  <div :class="`main-container ${getTimeOfDay}`">
+  <div :class="`main-container main-container__${getTimeOfDay.toLowerCase()}`">
     <header class="header">
       <Header />
     </header>
@@ -13,11 +13,10 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
+
 import Header from '@/components/Header';
 import CurrentLocation from '@/components/CurrentLocation';
 import CityWeatherList from '@/components/CityWeatherList';
-
-console.log()
 
 export default {
   components: {
@@ -51,7 +50,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@/assets/style/main.scss";
+@import "~@/assets/style/main.scss";
 
 .main-container {
   position: fixed;
@@ -62,16 +61,16 @@ export default {
   padding: 15px;
   overflow-y: scroll;
 
-  &.Day, &.Night {
+  &__day, &__night {
     background-repeat: no-repeat;
     background-size: cover;
   }
 
-  &.Day {
+  &__day {
     background-image: url("~@/assets/img/background-day.png");
   }
 
-  &.Night {
+  &__night {
     background-image: url("~@/assets/img/background-night.png");
   }
 }

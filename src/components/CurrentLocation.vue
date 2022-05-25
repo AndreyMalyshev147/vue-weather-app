@@ -1,5 +1,8 @@
 <template>
-  <div v-if="getCurLocWeather.length !== 0" class="big-card">
+  <div
+    v-if="getCurLocWeather.length !== 0"
+    class="big-card"
+  >
     <div :class="`big-card__wrap big-card__wrap--${getMainWeather}`">
       <div :class="`big-card__weather-icon big-card__weather-icon--${getMainWeather}`">
       </div>

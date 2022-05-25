@@ -1,5 +1,6 @@
 {
-  "name": "weather-app",
+  "name": "vue-weather-app",
+  "homepage": "",
   "version": "0.1.0",
   "private": true,
   "scripts": {

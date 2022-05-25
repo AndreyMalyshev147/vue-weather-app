@@ -24,6 +24,7 @@ const mutations = {
   addCitiesWeather(state, data) {
     state.citiesWeather.push(data);
   },
+
   removeCities(state, data) {
     let index = state.citiesWeather.findIndex(val => val.id === data.id);
     state.citiesWeather.splice(index, 1);

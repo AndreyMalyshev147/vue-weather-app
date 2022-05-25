@@ -1,7 +1,11 @@
 <template>
   <div class="header__search">
-    <form class="header__form" action="" @submit.prevent>
-      <input type="text" placeholder="Enter the city..." v-model="city">
+    <form class="header__form" @submit.prevent>
+      <input
+        type="text"
+        placeholder="Enter the city..."
+        v-model="city"
+      >
       <button @click="addCityToList">ADD CITY</button>
     </form>
   </div>
@@ -27,7 +31,5 @@ export default {
       this.city = '';
     }
   },
-
-
 }
 </script>
