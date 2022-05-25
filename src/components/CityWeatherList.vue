@@ -100,7 +100,6 @@ export default {
     return {
       perPage: 5,
       currentPage: 1,
-      pageCount: null
     }
   },
 
